@@ -33,6 +33,9 @@ async function searchTextOnGoogle() {
             build: 'NodeJS build', // name of the build
             "project": "Untitled",
             "w3c": true,
+            "console": true,
+            "accessibility": true,
+            "accessibility.wcagVersion": "wcag21aaa",
             "plugin": "node_js-node_js"
         }
     };
