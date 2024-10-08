@@ -7,7 +7,8 @@
 
     Result
     -------
-    Execute NodeJS Automation Tests on LambdaTest Distributed Selenium Grid 
+    Execute NodeJS Automation Tests on
+     LambdaTest Distributed Selenium Grid 
 */
 
 const webdriver = require('selenium-webdriver');
@@ -36,7 +37,8 @@ async function searchTextOnGoogle() {
             "console": true,
             "accessibility": true,
             "accessibility.wcagVersion": "wcag21aaa",
-            "plugin": "node_js-node_js"
+            "plugin": "node_js-node_js",
+            "smartUI.project": "NodeJS-SmartUI-Project"
         }
     };
 
@@ -52,6 +54,10 @@ async function searchTextOnGoogle() {
     try {
         // Navigate to a URL, click on the first and second list items and add a new one in the list.
         await driver.get('https://lambdatest.github.io/sample-todo-app/');
+        let config = {
+            screenshotName: 'pic1'
+          };
+        await driver.executeScript("smartui.takeScreenshot", config);
         await driver.findElement(webdriver.By.name('li1')).click();
         console.log("Successfully clicked first list item.");
         await driver.findElement(webdriver.By.name('li2')).click();
